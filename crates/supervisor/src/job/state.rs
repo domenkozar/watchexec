@@ -91,7 +91,7 @@ impl CommandState {
 
 		#[cfg(not(test))]
 		let child = if let Some(f) = spawn_fn {
-			spawnable.spawn_with(|cmd| f(cmd))?
+			f(spawnable)?
 		} else {
 			spawnable.spawn()?
 		};
